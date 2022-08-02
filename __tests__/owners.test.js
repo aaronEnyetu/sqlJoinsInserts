@@ -9,7 +9,7 @@ describe('backend-express-template routes', () => {
   });
 
   it('should add a new owner', async () => {
-    const resp = await (await request(app).post('/owners')).setEncoding({ name: 'Franny' });
+    const resp = await request(app).post('/owners').send({ name: 'Franny' });
     expect(resp.status).toBe(200);
 
   });
